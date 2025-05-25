@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <title>Вход в систему</title>
   <link rel="stylesheet" href="https://kazcyber.zapto.org/css/style.css">
+  <style>
+    .fake-captcha {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 8px;
+      font-family: sans-serif;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
 
@@ -13,16 +23,16 @@
     <input type="text" name="username" placeholder="Логин" required><br>
     <input type="password" name="password" placeholder="Пароль" required><br>
 
-    <!-- Фейковая капча -->
-    <div class="g-recaptcha" data-sitekey="6Ld_q0UrAAAAADc3t0ns6sob56ZAz5ikcUahqrv1"></div>
+    <!-- Фальшивая капча -->
+    <div class="fake-captcha">
+      ✅ Я не робот
+    </div>
 
     <button type="submit">Войти</button>
   </form>
 </div>
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<!-- Редирект после входа -->
+<!-- Автоматический редирект -->
 <script>
   document.getElementById("loginForm").addEventListener("submit", function() {
     setTimeout(function() {
